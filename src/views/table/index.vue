@@ -231,7 +231,8 @@ export default {
     },
     onSubmit() {
       this.listLoading = true;
-      console.log(this.params);
+      // console.log(this.params);
+      this.params.page = 1;
       getTable(this.params).then((response) => {
         this.list = response.data.list;
         this.listLoading = false;

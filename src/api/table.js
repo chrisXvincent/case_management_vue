@@ -1,6 +1,6 @@
 import request from '@/utils/request'
-// var host = "http://172.17.16.142:5000"
-var host = "http://localhost:5000"
+var host = "http://172.17.16.142:5000"
+// var host = "http://localhost:5000"
 export function getList(params) {
   return request({
     baseURL: host,
