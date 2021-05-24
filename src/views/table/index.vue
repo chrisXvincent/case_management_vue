@@ -45,6 +45,7 @@
           ></el-option>
         </el-select>
       </el-form-item>
+      <br />
       <el-form-item label="时间">
         <el-col :span="11">
           <el-date-picker
@@ -85,12 +86,12 @@
       fit
       highlight-current-row
     >
-      <el-table-column align="center" label="用例ID" width="95">
+      <el-table-column align="center" label="用例ID" width="100px">
         <template slot-scope="scope">
           {{ scope.row.case_id }}
         </template>
       </el-table-column>
-      <el-table-column label="用例名称">
+      <el-table-column label="用例名称" width="380px">
         <template slot-scope="scope">
           {{ scope.row.case_title }}
         </template>
@@ -109,7 +110,6 @@
         class-name="status-col"
         label="最后更新时间"
         align="center"
-        width="200"
       >
         <template slot-scope="scope">
           <i class="el-icon-time" />
@@ -120,7 +120,6 @@
         align="center"
         prop="created_at"
         label="创建/更新人"
-        width="120"
       >
         <template slot-scope="scope">
           <span>{{ scope.row.editor }}</span>
@@ -130,7 +129,6 @@
         align="center"
         prop="created_at"
         label="操作"
-        width="150"
       >
         <template slot-scope="scope">
           <el-button size="mini" @click="handleEdit(scope.row.case_id)"
@@ -147,7 +145,7 @@
   :visible.sync="dialogVisible"
   width="30%"
   >
-  <span>这是一段信息</span>
+  <span>确认是否删除此用例？</span>
   <span slot="footer" class="dialog-footer">
     <el-button @click="dialogVisible = false">取 消</el-button>
     <el-button type="primary" @click="deleteCase()">确 定</el-button>

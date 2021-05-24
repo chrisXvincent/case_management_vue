@@ -103,6 +103,8 @@ export default {
   mounted() {
     this.getUsername();
     this.getBusinessName();
+    this.$refs.editor.styleObject.width = 'auto';
+    this.$refs.editor.styleObject.height = '640px';
   },
 
   methods: {
@@ -112,7 +114,7 @@ export default {
         this.$message({
           message: '业务、模块、用例名称必填！',
           type: 'warning'
-        });        
+        });
       } else {
         this.getContent();
         addCase(this.params).then((response) => {
@@ -191,7 +193,7 @@ export default {
     //跳转用例首页
     goTablePage() {
       this.$router.push({
-       path: '/example/table'
+       path: '/table/index'
       })
     },
     //跳转用例创建页面
